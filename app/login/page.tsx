@@ -37,6 +37,7 @@ export default function LoginPage() {
 
       try {
       await signInWithEmailAndPassword(auth, email, password)
+      localStorage.setItem("isLoggedIn", "true")
       router.push("/dashboard")
     } catch (err) {
       setError("Invalid email or password")
